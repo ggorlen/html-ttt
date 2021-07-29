@@ -15,7 +15,7 @@ sub write_position {
     my ($position, $html, $dir) = @_;
     my ($x, $o, $ply) = @{$position}{qw(x o ply)};
     my $filename = "$dir/ply_$ply--x_$x--o_$o.html";
-    $filename = "$dir/index.html" if $ply == 0 && $x == 0 && $o == 0;
+    $filename = $dir if $ply == 0 && $x == 0 && $o == 0;
     fwrite($filename, $html);
 }
 
